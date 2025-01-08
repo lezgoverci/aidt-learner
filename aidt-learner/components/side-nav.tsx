@@ -26,7 +26,7 @@ const menuItems = [
 
 export function SideNav() {
   const [open, setOpen] = useState(false)
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(true)
 
   useEffect(() => {
     const main = document.querySelector('main')
