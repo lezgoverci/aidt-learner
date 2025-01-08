@@ -7,7 +7,7 @@ const nextConfig = {
         hostname: 'placehold.jp',
       },
     ],
-    domains: ['placehold.jp'],
+    domains: ['placehold.jp', 'picsum.photos'],
   },
 }
 

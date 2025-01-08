@@ -1,4 +1,5 @@
-import { ChevronRight, Clock, Star, ChevronDown } from 'lucide-react'
+'use client'
+import { ChevronRight, Clock, Star, ChevronDown, Maximize2 } from 'lucide-react'
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -8,6 +9,7 @@ import { RelatedCourses } from "@/components/related-courses"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { cn } from "@/lib/utils"
+import { useState } from 'react'
 
 // This would typically come from an API or database
 const courseData = {
@@ -77,22 +79,64 @@ const courseData = {
 }
 
 export default function CourseDetails() {
-  return (
-    <div className="space-y-8">
-      {/* Video Player - Now outside the content grid */}
-      <div className="aspect-video w-full bg-black">
-        <video
-          className="w-full h-full"
-          controls
-          poster="/placeholder.svg"
-          src={courseData.videoUrl}
-        />
-      </div>
+  const [isTheaterMode, setIsTheaterMode] = useState(false)
 
-      {/* Main content - Now wrapped in a container */}
-      <div className="flex gap-8 p-6">
-        <div className="flex-1 space-y-8">
-          {/* Breadcrumb */}
+  return (
+    <div className="space-y-8 p-6">
+      {/* Video container - full width in theater mode */}
+      {isTheaterMode && (
+        <div className="w-full">
+          <div className="relative aspect-video w-full bg-black group">
+            <video
+              className="w-full h-full"
+              controls
+              poster="/placeholder.svg"
+              src={courseData.videoUrl}
+            />
+            <div className="absolute bottom-14 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="bg-black/50 hover:bg-black/75 text-white"
+                onClick={() => setIsTheaterMode(!isTheaterMode)}
+              >
+                <Maximize2 className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Main content and sidebar container */}
+      <div className="flex gap-8">
+        {/* Main content column (video + content) */}
+        <div className={cn(
+          "space-y-8",
+          isTheaterMode ? "flex-1" : "w-[calc(100%-20rem-2rem)]"
+        )}>
+          {/* Video Player - Only show in non-theater mode */}
+          {!isTheaterMode && (
+            <div className="relative aspect-video w-full bg-black group">
+              <video
+                className="w-full h-full"
+                controls
+                poster="/placeholder.svg"
+                src={courseData.videoUrl}
+              />
+              <div className="absolute bottom-14 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="bg-black/50 hover:bg-black/75 text-white"
+                  onClick={() => setIsTheaterMode(!isTheaterMode)}
+                >
+                  <Maximize2 className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+          )}
+
+          {/* Course content */}
           <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
             <Link href="/" className="hover:text-foreground">
               Courses
@@ -173,9 +217,9 @@ export default function CourseDetails() {
           </Tabs>
         </div>
 
-        {/* Sidebar */}
+        {/* Sidebar - Course Contents and Related Courses */}
         <div className="w-80 flex-shrink-0 space-y-6">
-          {/* Course Contents */}
+          {/* Course Contents Card */}
           <Card>
             <div className="flex items-center p-4 border-b">
               <div className="flex items-center gap-2">
@@ -237,7 +281,6 @@ export default function CourseDetails() {
               ))}
             </div>
           </Card>
-
           {/* Related Courses */}
           <RelatedCourses />
         </div>

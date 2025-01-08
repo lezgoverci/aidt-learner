@@ -1,74 +1,87 @@
+import { Card } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
-import { Bookmark } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 
+// Mock data - replace with real data in production
 const relatedCourses = [
   {
-    id: "1",
-    title: "Controlling ChatGPT with Custom Instructions or Actions",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=ChatGPT+Instructions",
-    duration: "1h 6m",
-    learners: "8,797",
-  },
-  {
     id: "2",
-    title: "OpenAI API: Function Calling",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Function+Calling",
-    duration: "34m",
-    learners: "9,157",
+    title: "Building AI-Powered Applications",
+    instructor: "Sarah Johnson",
+    duration: "2h 15m",
+    thumbnail: "https://picsum.photos/seed/ai-course/320/200"
   },
   {
     id: "3",
-    title: "OpenAI API: Speech",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=OpenAI+Speech",
-    duration: "25m",
-    learners: "1,442",
+    title: "Machine Learning Fundamentals",
+    instructor: "David Chen",
+    duration: "1h 45m",
+    thumbnail: "https://picsum.photos/seed/ml-course/320/200"
   },
   {
     id: "4",
-    title: "OpenAI API: Moderation",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=OpenAI+Moderation",
-    duration: "14m",
-    learners: "1,808",
+    title: "Deep Learning with Neural Networks",
+    instructor: "Maria Garcia",
+    duration: "3h 30m",
+    thumbnail: "https://picsum.photos/seed/deep-learning/320/200"
   },
+  {
+    id: "5",
+    title: "Natural Language Processing Essentials",
+    instructor: "James Wilson",
+    duration: "2h 45m",
+    thumbnail: "https://picsum.photos/seed/nlp-course/320/200"
+  },
+  {
+    id: "6",
+    title: "Computer Vision and Image Recognition",
+    instructor: "Emily Zhang",
+    duration: "4h 00m",
+    thumbnail: "https://picsum.photos/seed/cv-course/320/200"
+  },
+  {
+    id: "7",
+    title: "Reinforcement Learning: From Theory to Practice",
+    instructor: "Alex Thompson",
+    duration: "3h 15m",
+    thumbnail: "https://picsum.photos/seed/rl-course/320/200"
+  }
 ]
 
 export function RelatedCourses() {
   return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-semibold">Related courses</h2>
-      <div className="space-y-4">
+    <Card>
+      <div className="p-4 border-b">
+        <h3 className="font-semibold">Related Courses</h3>
+      </div>
+      <div className="p-4 space-y-4">
         {relatedCourses.map((course) => (
-          <Card key={course.id} className="overflow-hidden">
-            <Link href={`/courses/${course.id}`}>
-              <div className="relative aspect-video">
-                <Image
-                  src={course.thumbnail}
-                  alt={course.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="font-medium line-clamp-2">{course.title}</h3>
-                <div className="mt-2 flex items-center justify-between text-sm text-muted-foreground">
-                  <span>{course.duration}</span>
-                  <span>{course.learners} learners</span>
-                </div>
-              </div>
-            </Link>
-            <div className="border-t p-2">
-              <Button variant="ghost" size="sm" className="w-full">
-                <Bookmark className="mr-2 h-4 w-4" />
-                Save
-              </Button>
+          <Link 
+            key={course.id} 
+            href={`/courses/${course.id}`}
+            className="flex gap-3 hover:bg-muted/50 rounded-lg p-2 transition-colors"
+          >
+            {/* Thumbnail */}
+            <div className="relative h-20 w-32 flex-shrink-0">
+              <Image
+                src={course.thumbnail}
+                alt={course.title}
+                fill
+                className="object-cover rounded-md"
+              />
             </div>
-          </Card>
+            {/* Course info */}
+            <div className="flex flex-col justify-between py-1">
+              <div>
+                <h4 className="font-medium line-clamp-2">{course.title}</h4>
+                <p className="text-sm text-muted-foreground">{course.instructor}</p>
+              </div>
+              <p className="text-xs text-muted-foreground">{course.duration}</p>
+            </div>
+          </Link>
         ))}
       </div>
-    </div>
+    </Card>
   )
 }
 
