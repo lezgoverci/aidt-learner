@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Home, Library, GraduationCap, Award, Menu, ChevronLeft } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import {
@@ -27,6 +27,19 @@ const menuItems = [
 export function SideNav() {
   const [open, setOpen] = useState(false)
   const [isCollapsed, setIsCollapsed] = useState(false)
+
+  useEffect(() => {
+    const main = document.querySelector('main')
+    if (main) {
+      if (!isCollapsed) {
+        main.classList.add('sidebar-expanded')
+        main.style.marginLeft = '300px'
+      } else {
+        main.classList.remove('sidebar-expanded')
+        main.style.marginLeft = '80px'
+      }
+    }
+  }, [isCollapsed])
 
   return (
     <>
@@ -66,13 +79,15 @@ export function SideNav() {
           className="fixed left-0 top-[1.2rem] z-50 ml-4"
           onClick={() => setIsCollapsed(!isCollapsed)}
         >
-          <Menu className="h-5 w-5" />
+          <ChevronLeft className={`h-5 w-5 transition-transform ${isCollapsed ? 'rotate-180' : ''}`} />
           <span className="sr-only">Toggle sidebar</span>
         </Button>
 
         <SidebarProvider>
-          <Sidebar className={`hidden md:flex h-screen flex-shrink-0 mt-16 transition-all duration-300 
-            ${isCollapsed ? 'w-[80px]' : 'w-[300px]'}`}>
+          <Sidebar 
+            className={`fixed left-0 h-screen mt-16 transition-all duration-300 ease-in-out
+              ${isCollapsed ? 'w-[80px]' : 'w-[300px]'}`}
+          >
             <SidebarContent>
               <SidebarMenu className="space-y-2 p-4">
                 {menuItems.map((item) => (

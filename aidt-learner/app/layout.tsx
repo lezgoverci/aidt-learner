@@ -22,10 +22,10 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col">
           <MainNav />
           <div className="flex flex-1">
-            <div className="hidden md:block">
+            <div className="flex md:block">
               <SideNav />
             </div>
-            <main className="flex-1 overflow-y-auto p-6">{children}</main>
+            <main className="flex-1 w-full overflow-y-auto p-6">{children}</main>
           </div>
         </div>
       </body>

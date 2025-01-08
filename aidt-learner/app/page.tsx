@@ -13,7 +13,7 @@ const topPicks = [
     title: "Creating GPTs with Actions",
     author: "Kesha Williams",
     duration: "1h 26m",
-    thumbnail: "/placeholder.svg",
+    thumbnail: "https://placeholdit.imgix.net/~text?txtsize=33&txt=GPTs+with+Actions&w=480&h=270",
     isPopular: true,
   },
   {
@@ -21,7 +21,7 @@ const topPicks = [
     title: "Build Your Own GPTs",
     author: "AI Expert",
     duration: "46m",
-    thumbnail: "/placeholder.svg",
+    thumbnail: "https://placeholdit.imgix.net/~text?txtsize=33&txt=Build+GPTs&w=480&h=270",
     isPopular: true,
   },
   {
@@ -56,7 +56,7 @@ const topCourses = [
     title: "Metasploit Essential Training",
     author: "Lisa Bock",
     duration: "4h",
-    thumbnail: "/placeholder.svg",
+    thumbnail: "https://placeholdit.imgix.net/~text?txtsize=33&txt=Metasploit&w=480&h=270",
     isPopular: true,
   },
   {
@@ -64,7 +64,7 @@ const topCourses = [
     title: "Enterprise Architecture in Practice",
     author: "Jane Doe",
     duration: "58m",
-    thumbnail: "/placeholder.svg",
+    thumbnail: "https://placeholdit.imgix.net/~text?txtsize=33&txt=Enterprise+Architecture&w=480&h=270",
     isPopular: true,
     isUpdated: true,
   },
