@@ -1,4 +1,4 @@
-import { ChevronRight, Clock, Star } from 'lucide-react'
+import { ChevronRight, Clock, Star, ChevronDown } from 'lucide-react'
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -6,6 +6,8 @@ import { Card } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { RelatedCourses } from "@/components/related-courses"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { cn } from "@/lib/utils"
 
 // This would typically come from an API or database
 const courseData = {
@@ -29,7 +31,49 @@ const courseData = {
     "Activate RAG (Retrieval Augmented Generation) with a simple upload"
   ],
   skills: ["OpenAI API", "Chatbot Development", "OpenAI Products"],
-  videoUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+  videoUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  contents: [
+    {
+      title: "Introduction",
+      items: [
+        {
+          title: "Building custom AI agents with the OpenAI Assistants API",
+          duration: "54s",
+          isCompleted: true
+        },
+        {
+          title: "How to use the exercise files",
+          duration: "3m 4s",
+          isCompleted: false
+        }
+      ]
+    },
+    {
+      title: "1. Using the Assistants API",
+      items: [
+        {
+          title: "Assistants: GPTs, but through the API",
+          duration: "3m 21s",
+          isCompleted: false
+        },
+        {
+          title: "Creating a basic assistant in the OpenAI playground",
+          duration: "4m 37s",
+          isCompleted: false
+        },
+        {
+          title: "Adding capabilities, functions, and files to an assistant",
+          duration: "4m 20s",
+          isCompleted: false
+        },
+        {
+          title: "Creating assistants, threads, and runs through the API",
+          duration: "6m 32s",
+          isCompleted: false
+        }
+      ]
+    }
+  ]
 }
 
 export default function CourseDetails() {
@@ -129,8 +173,72 @@ export default function CourseDetails() {
           </Tabs>
         </div>
 
-        {/* Related Courses Sidebar */}
-        <div className="w-80 flex-shrink-0">
+        {/* Sidebar */}
+        <div className="w-80 flex-shrink-0 space-y-6">
+          {/* Course Contents */}
+          <Card>
+            <div className="flex items-center p-4 border-b">
+              <div className="flex items-center gap-2">
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <span className="font-semibold">Contents</span>
+              </div>
+            </div>
+            <div className="divide-y">
+              {courseData.contents.map((section, idx) => (
+                <Collapsible key={idx} defaultOpen>
+                  <CollapsibleTrigger className="flex w-full items-center justify-between p-4 hover:bg-muted/50">
+                    <div className="flex items-center gap-2">
+                      <ChevronDown className="h-4 w-4" />
+                      <span className="font-medium">{section.title}</span>
+                    </div>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <div className="space-y-1 px-4 pb-4">
+                      {section.items.map((item, itemIdx) => (
+                        <div
+                          key={itemIdx}
+                          className={cn(
+                            "flex items-center gap-3 rounded-md p-2 text-sm hover:bg-muted/50",
+                            item.isCompleted && "text-muted-foreground"
+                          )}
+                        >
+                          <div className="flex-shrink-0">
+                            {item.isCompleted ? (
+                              <div className="h-4 w-4 rounded-full bg-green-500 flex items-center justify-center">
+                                <svg
+                                  className="h-3 w-3 text-white"
+                                  fill="none"
+                                  strokeWidth="2"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                            ) : (
+                              <div className="h-4 w-4 rounded-full border border-gray-300" />
+                            )}
+                          </div>
+                          <span className="flex-1">{item.title}</span>
+                          <span className="text-muted-foreground text-xs">{item.duration}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              ))}
+            </div>
+          </Card>
+
+          {/* Related Courses */}
           <RelatedCourses />
         </div>
       </div>

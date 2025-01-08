@@ -13,7 +13,7 @@ const topPicks = [
     title: "Creating GPTs with Actions",
     author: "Kesha Williams",
     duration: "1h 26m",
-    thumbnail: "https://placeholdit.imgix.net/~text?txtsize=33&txt=GPTs+with+Actions&w=480&h=270",
+    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=GPTs+with+Actions",
     isPopular: true,
   },
   {
@@ -21,7 +21,7 @@ const topPicks = [
     title: "Build Your Own GPTs",
     author: "AI Expert",
     duration: "46m",
-    thumbnail: "https://placeholdit.imgix.net/~text?txtsize=33&txt=Build+GPTs&w=480&h=270",
+    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Build+GPTs",
     isPopular: true,
   },
   {
@@ -29,7 +29,7 @@ const topPicks = [
     title: "Building a React Project with Google Bard and PaLM2",
     author: "Ray Villalobos",
     duration: "1h 21m",
-    thumbnail: "/placeholder.svg",
+    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=React+Bard+PaLM2",
     isPopular: true,
   },
   {
@@ -37,7 +37,7 @@ const topPicks = [
     title: "ChatGPT: Publishing GPTs on the GPT Store",
     author: "Morten Rand-Hendriksen",
     duration: "20m",
-    thumbnail: "/placeholder.svg",
+    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=GPT+Store",
     isPopular: true,
   },
   {
@@ -45,7 +45,7 @@ const topPicks = [
     title: "AI Workshop: Chatbot Development",
     author: "Axel Sirota",
     duration: "2h 15m",
-    thumbnail: "/placeholder.svg",
+    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=AI+Chatbot",
     isPopular: true,
   },
 ]
@@ -56,7 +56,7 @@ const topCourses = [
     title: "Metasploit Essential Training",
     author: "Lisa Bock",
     duration: "4h",
-    thumbnail: "https://placeholdit.imgix.net/~text?txtsize=33&txt=Metasploit&w=480&h=270",
+    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Metasploit",
     isPopular: true,
   },
   {
@@ -64,7 +64,7 @@ const topCourses = [
     title: "Enterprise Architecture in Practice",
     author: "Jane Doe",
     duration: "58m",
-    thumbnail: "https://placeholdit.imgix.net/~text?txtsize=33&txt=Enterprise+Architecture&w=480&h=270",
+    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Enterprise+Architecture",
     isPopular: true,
     isUpdated: true,
   },
@@ -73,7 +73,7 @@ const topCourses = [
     title: "Maya 2024 Essential Training",
     author: "George Maestri",
     duration: "4h 17m",
-    thumbnail: "/placeholder.svg",
+    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Maya+2024",
     isPopular: true,
   },
   {
@@ -81,7 +81,7 @@ const topCourses = [
     title: "Learning Kubernetes",
     author: "Kim Schlesinger",
     duration: "1h 28m",
-    thumbnail: "/placeholder.svg",
+    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Kubernetes",
     isPopular: true,
     isUpdated: true,
   },
@@ -90,7 +90,7 @@ const topCourses = [
     title: "C#: Interfaces and Generics",
     author: "Joe Marini",
     duration: "1h 45m",
-    thumbnail: "/placeholder.svg",
+    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=CSharp",
     isPopular: true,
   },
 ]

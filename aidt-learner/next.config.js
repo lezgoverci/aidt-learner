@@ -4,9 +4,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'placeholdit.imgix.net',
+        hostname: 'placehold.jp',
       },
     ],
+    domains: ['placehold.jp'],
   },
 }
 
