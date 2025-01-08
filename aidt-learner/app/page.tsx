@@ -13,7 +13,7 @@ const topPicks = [
     title: "Creating GPTs with Actions",
     author: "Kesha Williams",
     duration: "1h 26m",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=GPTs+with+Actions",
+    thumbnail: "https://picsum.photos/seed/gpt-actions/480/270",
     isPopular: true,
   },
   {
@@ -21,7 +21,7 @@ const topPicks = [
     title: "Build Your Own GPTs",
     author: "AI Expert",
     duration: "46m",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Build+GPTs",
+    thumbnail: "https://picsum.photos/seed/build-gpts/480/270",
     isPopular: true,
   },
   {
@@ -29,7 +29,7 @@ const topPicks = [
     title: "Building a React Project with Google Bard and PaLM2",
     author: "Ray Villalobos",
     duration: "1h 21m",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=React+Bard+PaLM2",
+    thumbnail: "https://picsum.photos/seed/react-bard-palm2/480/270",
     isPopular: true,
   },
   {
@@ -37,7 +37,7 @@ const topPicks = [
     title: "ChatGPT: Publishing GPTs on the GPT Store",
     author: "Morten Rand-Hendriksen",
     duration: "20m",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=GPT+Store",
+    thumbnail: "https://picsum.photos/seed/gpt-store/480/270",
     isPopular: true,
   },
   {
@@ -45,9 +45,34 @@ const topPicks = [
     title: "AI Workshop: Chatbot Development",
     author: "Axel Sirota",
     duration: "2h 15m",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=AI+Chatbot",
+    thumbnail: "https://picsum.photos/seed/ai-chatbot/480/270",
     isPopular: true,
   },
+  {
+    id: "11",
+    title: "Machine Learning Fundamentals",
+    author: "Sarah Mitchell",
+    duration: "3h 45m",
+    thumbnail: "https://picsum.photos/seed/ml-fundamentals/480/270",
+    isPopular: true,
+  },
+  {
+    id: "12",
+    title: "Advanced TypeScript Patterns",
+    author: "Michael Chen",
+    duration: "2h 30m",
+    thumbnail: "https://picsum.photos/seed/typescript-adv/480/270",
+    isPopular: true,
+  },
+  {
+    id: "13",
+    title: "Docker for Developers",
+    author: "Carlos Rodriguez",
+    duration: "4h 15m",
+    thumbnail: "https://picsum.photos/seed/docker-dev/480/270",
+    isPopular: true,
+    isUpdated: true,
+  }
 ]
 
 const topCourses = [
@@ -56,7 +81,7 @@ const topCourses = [
     title: "Metasploit Essential Training",
     author: "Lisa Bock",
     duration: "4h",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Metasploit",
+    thumbnail: "https://picsum.photos/seed/metasploit/480/270",
     isPopular: true,
   },
   {
@@ -64,7 +89,7 @@ const topCourses = [
     title: "Enterprise Architecture in Practice",
     author: "Jane Doe",
     duration: "58m",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Enterprise+Architecture",
+    thumbnail: "https://picsum.photos/seed/enterprise-arch/480/270",
     isPopular: true,
     isUpdated: true,
   },
@@ -73,7 +98,7 @@ const topCourses = [
     title: "Maya 2024 Essential Training",
     author: "George Maestri",
     duration: "4h 17m",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Maya+2024",
+    thumbnail: "https://picsum.photos/seed/maya-2024/480/270",
     isPopular: true,
   },
   {
@@ -81,7 +106,7 @@ const topCourses = [
     title: "Learning Kubernetes",
     author: "Kim Schlesinger",
     duration: "1h 28m",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=Kubernetes",
+    thumbnail: "https://picsum.photos/seed/kubernetes/480/270",
     isPopular: true,
     isUpdated: true,
   },
@@ -90,9 +115,34 @@ const topCourses = [
     title: "C#: Interfaces and Generics",
     author: "Joe Marini",
     duration: "1h 45m",
-    thumbnail: "https://placehold.jp/333333/ffffff/480x270.png?text=CSharp",
+    thumbnail: "https://picsum.photos/seed/csharp-interfaces/480/270",
     isPopular: true,
   },
+  {
+    id: "14",
+    title: "React Performance Optimization",
+    author: "Emma Thompson",
+    duration: "2h 50m",
+    thumbnail: "https://picsum.photos/seed/react-perf/480/270",
+    isPopular: true,
+  },
+  {
+    id: "15",
+    title: "AWS Solutions Architecture",
+    author: "James Wilson",
+    duration: "5h 30m",
+    thumbnail: "https://picsum.photos/seed/aws-solutions/480/270",
+    isPopular: true,
+    isUpdated: true,
+  },
+  {
+    id: "16",
+    title: "Python for Data Science",
+    author: "Nina Patel",
+    duration: "4h 45m",
+    thumbnail: "https://picsum.photos/seed/python-data/480/270",
+    isPopular: true,
+  }
 ]
 
 export default function Home() {
