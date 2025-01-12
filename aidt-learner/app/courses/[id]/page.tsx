@@ -87,12 +87,15 @@ export default function CourseDetails() {
       {isTheaterMode && (
         <div className="w-full">
           <div className="relative aspect-video w-full bg-black group">
-            <video
-              className="w-full h-full"
-              controls
-              poster="/placeholder.svg"
-              src={courseData.videoUrl}
-            />
+            <div className="w-full h-full">
+              <iframe
+                className="w-full h-full"
+                src="/index.html" // Replace with your embed URL
+                title="Embedded Content"
+                frameBorder="0"
+                allowFullScreen
+              />
+            </div>
             <div className="absolute bottom-14 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
               <Button
                 variant="ghost"
@@ -117,12 +120,15 @@ export default function CourseDetails() {
           {/* Video Player - Only show in non-theater mode */}
           {!isTheaterMode && (
             <div className="relative aspect-video w-full bg-black group">
-              <video
-                className="w-full h-full"
-                controls
-                poster="/placeholder.svg"
-                src={courseData.videoUrl}
-              />
+              <div className="w-full h-full">
+                <iframe
+                  className="w-full h-full"
+                  src="/index.html" // Replace with your embed URL
+                  title="Embedded Content"
+                  frameBorder="0"
+                  allowFullScreen
+                />
+              </div>
               <div className="absolute bottom-14 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
                 <Button
                   variant="ghost"

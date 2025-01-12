@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: none;
+        }
+
+        .slide.active {
+            opacity: 1;
+            display: block;
+        }
+
+        .background-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            padding: 2rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        .slide.active .title {
+            animation: fadeInDown 1s forwards;
+            animation-delay: 0.3s;
+        }
+
+        .items-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 15px;
+            width: 300px;
+            opacity: 0;
+            transform: translateY(50px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide.active .item {
+            animation: fadeInUp 1s forwards;
+        }
+
+        .slide.active .item:nth-child(1) { animation-delay: 0.5s; }
+        .slide.active .item:nth-child(2) { animation-delay: 0.7s; }
+        .slide.active .item:nth-child(3) { animation-delay: 0.9s; }
+
+        .item-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .item-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-description {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-button {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .nav-button:hover {
+            background: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide active" id="slide1">
+        <video class="background-video" autoplay muted loop playsinline>
+            <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.1080p.vp9.webm" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1 class="title">Welcome to Wildlife Education</h1>
+            <div class="items-container">
+                <div class="item">
+                    <div class="item-icon">🐻</div>
+                    <h2 class="item-title">Bear Species</h2>
+                    <p class="item-description">Discover the eight different species of bears found around the world.</p>
+                </div>
+                <div class="item">
+                    <div class="item-icon">🌲</div>
+                    <h2 class="item-title">Natural Habitats</h2>
+                    <p class="item-description">Explore the diverse ecosystems where bears thrive and survive.</p>
+                </div>
+                <div class="item">
+                    <div class="item-icon">🍯</div>
+                    <h2 class="item-title">Diet & Nutrition</h2>
+                    <p class="item-description">Learn about the varied diet and feeding habits of different bear species.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide2">
+        <video class="background-video" autoplay muted loop playsinline>
+            <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.1080p.vp9.webm" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1 class="title">Bear Behavior</h1>
+            <div class="items-container">
+                <div class="item">
+                    <div class="item-icon">🧠</div>
+                    <h2 class="item-title">Intelligence</h2>
+                    <p class="item-description">Explore the remarkable problem-solving abilities and cognitive skills of bears.</p>
+                </div>
+                <div class="item">
+                    <div class="item-icon">👪</div>
+                    <h2 class="item-title">Social Structure</h2>
+                    <p class="item-description">Understanding family dynamics and social interactions among bears.</p>
+                </div>
+                <div class="item">
+                    <div class="item-icon">🌙</div>
+                    <h2 class="item-title">Hibernation</h2>
+                    <p class="item-description">Learn about the fascinating process of bear hibernation and seasonal adaptations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide3">
+        <video class="background-video" autoplay muted loop playsinline>
+            <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.1080p.vp9.webm" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1 class="title">Conservation Efforts</h1>
+            <div class="items-container">
+                <div class="item">
+                    <div class="item-icon">🌍</div>
+                    <h2 class="item-title">Global Protection</h2>
+                    <p class="item-description">Worldwide initiatives and programs dedicated to bear conservation.</p>
+                </div>
+                <div class="item">
+                    <div class="item-icon">🏕️</div>
+                    <h2 class="item-title">Habitat Preservation</h2>
+                    <p class="item-description">Efforts to protect and restore natural bear habitats.</p>
+                </div>
+                <div class="item">
+                    <div class="item-icon">🤝</div>
+                    <h2 class="item-title">Community Involvement</h2>
+                    <p class="item-description">How local communities contribute to bear conservation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" onclick="previousSlide()">Previous</button>
+        <button class="nav-button" onclick="nextSlide()">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 3;
+
+        function showSlide(slideNumber) {
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            document.getElementById(`slide${slideNumber}`).classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
+            showSlide(currentSlide);
+        }
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('nav-button')) {
+                nextSlide();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+    </script>
+</body>
+</html>
