@@ -9,71 +9,71 @@ import { CourseCard } from "@/components/course-card"
 
 const topPicks = [
   {
-    id: "1",
-    title: "Creating GPTs with Actions",
-    author: "Kesha Williams",
-    duration: "1h 26m",
-    thumbnail: "https://picsum.photos/seed/gpt-actions/480/270",
-    isPopular: true,
+    "id": "1",
+    "title": "Digital Transformation Playbook",
+    "author": "Edwin Bautista",
+    "duration": "4h",
+    "thumbnail": "/erb_course.png",
+    "isPopular": true
   },
   {
-    id: "2",
-    title: "Build Your Own GPTs",
-    author: "AI Expert",
-    duration: "46m",
-    thumbnail: "https://picsum.photos/seed/build-gpts/480/270",
-    isPopular: true,
+    "id": "2",
+    "title": "Disruptive Innovation",
+    "author": "Edwin Bautista",
+    "duration": "3h 30m",
+    "thumbnail": "https://picsum.photos/seed/disruptive-innovation/480/270",
+    "isPopular": true
   },
   {
-    id: "3",
-    title: "Building a React Project with Google Bard and PaLM2",
-    author: "Ray Villalobos",
-    duration: "1h 21m",
-    thumbnail: "https://picsum.photos/seed/react-bard-palm2/480/270",
-    isPopular: true,
+    "id": "3",
+    "title": "Customer Journey and Digital Marketing",
+    "author": "Edwin Bautista",
+    "duration": "3h 45m",
+    "thumbnail": "https://picsum.photos/seed/customer-journey/480/270",
+    "isPopular": false
   },
   {
-    id: "4",
-    title: "ChatGPT: Publishing GPTs on the GPT Store",
-    author: "Morten Rand-Hendriksen",
-    duration: "20m",
-    thumbnail: "https://picsum.photos/seed/gpt-store/480/270",
-    isPopular: true,
+    "id": "4",
+    "title": "Transformation Leadership",
+    "author": "Edwin Bautista",
+    "duration": "3h",
+    "thumbnail": "https://picsum.photos/seed/transformation-leadership/480/270",
+    "isPopular": true
   },
   {
-    id: "5",
-    title: "AI Workshop: Chatbot Development",
-    author: "Axel Sirota",
-    duration: "2h 15m",
-    thumbnail: "https://picsum.photos/seed/ai-chatbot/480/270",
-    isPopular: true,
+    "id": "5",
+    "title": "Cybersecurity and Data Privacy",
+    "author": "Edwin Bautista",
+    "duration": "4h",
+    "thumbnail": "https://picsum.photos/seed/cybersecurity/480/270",
+    "isPopular": false
   },
   {
-    id: "11",
-    title: "Machine Learning Fundamentals",
-    author: "Sarah Mitchell",
-    duration: "3h 45m",
-    thumbnail: "https://picsum.photos/seed/ml-fundamentals/480/270",
-    isPopular: true,
+    "id": "6",
+    "title": "Agile Culture and Methods",
+    "author": "Edwin Bautista",
+    "duration": "3h 15m",
+    "thumbnail": "https://picsum.photos/seed/agile-culture/480/270",
+    "isPopular": true
   },
   {
-    id: "12",
-    title: "Advanced TypeScript Patterns",
-    author: "Michael Chen",
-    duration: "2h 30m",
-    thumbnail: "https://picsum.photos/seed/typescript-adv/480/270",
-    isPopular: true,
+    "id": "7",
+    "title": "Intrapreneurial Design Thinking",
+    "author": "Edwin Bautista",
+    "duration": "3h",
+    "thumbnail": "https://picsum.photos/seed/design-thinking/480/270",
+    "isPopular": false
   },
   {
-    id: "13",
-    title: "Docker for Developers",
-    author: "Carlos Rodriguez",
-    duration: "4h 15m",
-    thumbnail: "https://picsum.photos/seed/docker-dev/480/270",
-    isPopular: true,
-    isUpdated: true,
+    "id": "8",
+    "title": "Open Innovation and Collaboration",
+    "author": "Edwin Bautista",
+    "duration": "2h 45m",
+    "thumbnail": "https://picsum.photos/seed/open-innovation/480/270",
+    "isPopular": false
   }
 ]
+
 
 const topCourses = [
   {
