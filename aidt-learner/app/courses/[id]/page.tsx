@@ -99,20 +99,30 @@ const courseData = {
     "Foster a culture of continuous improvement and innovation"
   ],
   skills: ["Digital transformation strategy", "Customer-centric innovation", "Operational excellence", "Business model reengineering"],
-  videoUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  videoUrl: "https://drive.google.com/file/d/1L7ke7HGF1lR-cKu7GYyKcDt0IxRQW0Qw/preview",
   contents: [
     {
-      title: "Module 1: Foundations of Digital Transformation and Customer Focus",
+      title: "Foundations of Digital Transformation and Customer Focus",
       items: [
         {
-          title: "Understanding the Digital Transformation Journey",
-          duration: "35m",
-          isCompleted: false
+          title: "Welcome to week 1",
+          duration: "1m",
+          isCompleted: true
+        },
+        {
+          title: "Introduction",
+          duration: "3m",
+          isCompleted: true
+        },
+        {
+          title: "What is Digital Transformation",
+          duration: "3m",
+          isCompleted: true
         },
         {
           title: "The Three Levels of Digital Transformation",
           duration: "28m",
-          isCompleted: false
+          isCompleted: true
         },
         {
           title: "Improving Efficiency and Rethinking Business Models",
@@ -142,7 +152,7 @@ const courseData = {
       ]
     },
     {
-      title: "Module 2: Leadership and Business Model Innovation",
+      title: "Leadership and Business Model Innovation",
       items: [
         {
           title: "Leading Digital Transformation",
@@ -162,7 +172,7 @@ const courseData = {
       ]
     },
     {
-      title: "Module 3: Driving Operational Excellence Through Technology",
+      title: "Driving Operational Excellence Through Technology",
       items: [
         {
           title: "Technology Stack Assessment",
@@ -182,7 +192,7 @@ const courseData = {
       ]
     },
     {
-      title: "Module 4: Empowering People and Fostering Innovation",
+      title: "Empowering People and Fostering Innovation",
       items: [
         {
           title: "Building Digital Capabilities",
@@ -291,7 +301,12 @@ export default function CourseDetails() {
                   <p className="text-sm text-muted-foreground">{courseData.instructor.role}</p>
                 </div>
               </div>
-              <Button>Follow on LinkedIn</Button>
+              <Button
+                onClick={
+                  //open linkedin profile in new tab
+                  () => window.open('https://www.linkedin.com/in/edwin-bautista-11355634/', '_blank')
+                }
+              >Follow on LinkedIn</Button>
             </div>
             <div className="flex items-center gap-4 text-sm">
               <div className="flex items-center gap-1">
@@ -364,15 +379,15 @@ export default function CourseDetails() {
                 >
                   <path d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-                <span className="font-semibold">Contents</span>
+                <span className="font-semibold">Modules</span>
               </div>
             </div>
             <div className="divide-y">
               {courseData.contents.map((section, idx) => (
                 <Collapsible key={idx} defaultOpen>
                   <CollapsibleTrigger className="flex w-full items-center justify-between p-4 hover:bg-muted/50">
-                    <div className="flex items-center gap-2">
-                      <ChevronDown className="h-4 w-4" />
+                    <div className="flex items-center gap-2 w-full text-left">
+                      <ChevronDown className="h-4 w-4 flex-shrink-0" />
                       <span className="font-medium">{section.title}</span>
                     </div>
                   </CollapsibleTrigger>
