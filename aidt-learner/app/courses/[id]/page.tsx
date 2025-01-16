@@ -12,65 +12,191 @@ import { cn } from "@/lib/utils"
 import { useState } from 'react'
 
 // This would typically come from an API or database
+// const courseData = {
+//   id: "1",
+//   title: "OpenAI API: Function Calling",
+//   instructor: {
+//     name: "Morten Rand-Hendriksen",
+//     role: "Senior Staff Instructor, Speaker, Web Designer, and Software Developer",
+//     avatar: "/placeholder.svg"
+//   },
+//   duration: "34m",
+//   level: "Beginner",
+//   rating: 4.8,
+//   ratingCount: 120,
+//   releaseDate: "12/7/2023",
+//   description: "OpenAI's Assistants API allows you to create custom GPT versions with their own instructions, knowledge retrieval, and actions for highly specialized and targeted functionality to incorporate into larger products. In this course you'll learn how to harness the power of custom GPT Assistants for everything from small personal tasks to large enterprise applications.",
+//   learningObjectives: [
+//     "Learn what the Assistants API is and how it works",
+//     "Use the OpenAI playground to work with the Assistants API",
+//     "Incorporate custom GPT Assistants in your applications",
+//     "Activate RAG (Retrieval Augmented Generation) with a simple upload"
+//   ],
+//   skills: ["OpenAI API", "Chatbot Development", "OpenAI Products"],
+//   videoUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+//   contents: [
+//     {
+//       title: "Introduction",
+//       items: [
+//         {
+//           title: "Building custom AI agents with the OpenAI Assistants API",
+//           duration: "54s",
+//           isCompleted: true
+//         },
+//         {
+//           title: "How to use the exercise files",
+//           duration: "3m 4s",
+//           isCompleted: false
+//         }
+//       ]
+//     },
+//     {
+//       title: "1. Using the Assistants API",
+//       items: [
+//         {
+//           title: "Assistants: GPTs, but through the API",
+//           duration: "3m 21s",
+//           isCompleted: false
+//         },
+//         {
+//           title: "Creating a basic assistant in the OpenAI playground",
+//           duration: "4m 37s",
+//           isCompleted: false
+//         },
+//         {
+//           title: "Adding capabilities, functions, and files to an assistant",
+//           duration: "4m 20s",
+//           isCompleted: false
+//         },
+//         {
+//           title: "Creating assistants, threads, and runs through the API",
+//           duration: "6m 32s",
+//           isCompleted: false
+//         }
+//       ]
+//     }
+//   ]
+// }
+
 const courseData = {
   id: "1",
-  title: "OpenAI API: Function Calling",
+  title: "Digital Transformation Playbook",
   instructor: {
-    name: "Morten Rand-Hendriksen",
-    role: "Senior Staff Instructor, Speaker, Web Designer, and Software Developer",
-    avatar: "/placeholder.svg"
+    name: "Edwin R. Bautista",
+    role: "Former CEO of Unionbank of the Philippines",
+    avatar: "/erb.png"
   },
-  duration: "34m",
-  level: "Beginner",
-  rating: 4.8,
-  ratingCount: 120,
-  releaseDate: "12/7/2023",
-  description: "OpenAI's Assistants API allows you to create custom GPT versions with their own instructions, knowledge retrieval, and actions for highly specialized and targeted functionality to incorporate into larger products. In this course you'll learn how to harness the power of custom GPT Assistants for everything from small personal tasks to large enterprise applications.",
+  duration: "4h 15m",
+  level: "Intermediate",
+  rating: 4.9,
+  ratingCount: 342,
+  releaseDate: "2/15/2024",
+  description: "This course provides a foundational understanding of digital transformation, exploring strategies and tools to enhance business operations, innovate business models, and create customer-centric solutions. Learn how to lead successful transformation efforts in a rapidly evolving digital economy.",
   learningObjectives: [
-    "Learn what the Assistants API is and how it works",
-    "Use the OpenAI playground to work with the Assistants API",
-    "Incorporate custom GPT Assistants in your applications",
-    "Activate RAG (Retrieval Augmented Generation) with a simple upload"
+    "Understand the key concepts of digital transformation",
+    "Develop leadership skills for navigating and implementing change",
+    "Optimize business processes through technology and innovation",
+    "Foster a culture of continuous improvement and innovation"
   ],
-  skills: ["OpenAI API", "Chatbot Development", "OpenAI Products"],
+  skills: ["Digital transformation strategy", "Customer-centric innovation", "Operational excellence", "Business model reengineering"],
   videoUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
   contents: [
     {
-      title: "Introduction",
+      title: "Module 1: Foundations of Digital Transformation and Customer Focus",
       items: [
         {
-          title: "Building custom AI agents with the OpenAI Assistants API",
-          duration: "54s",
-          isCompleted: true
+          title: "Understanding the Digital Transformation Journey",
+          duration: "35m",
+          isCompleted: false
         },
         {
-          title: "How to use the exercise files",
-          duration: "3m 4s",
+          title: "The Three Levels of Digital Transformation",
+          duration: "28m",
+          isCompleted: false
+        },
+        {
+          title: "Improving Efficiency and Rethinking Business Models",
+          duration: "42m",
+          isCompleted: false
+        },
+        {
+          title: "The Foundations: Digitization as the First Step",
+          duration: "31m",
+          isCompleted: false
+        },
+        {
+          title: "Streamlining Systems for Success",
+          duration: "38m",
+          isCompleted: false
+        },
+        {
+          title: "Customer-Centric Innovation",
+          duration: "45m",
+          isCompleted: false
+        },
+        {
+          title: "Redefining the Business Model",
+          duration: "40m",
           isCompleted: false
         }
       ]
     },
     {
-      title: "1. Using the Assistants API",
+      title: "Module 2: Leadership and Business Model Innovation",
       items: [
         {
-          title: "Assistants: GPTs, but through the API",
-          duration: "3m 21s",
+          title: "Leading Digital Transformation",
+          duration: "50m",
           isCompleted: false
         },
         {
-          title: "Creating a basic assistant in the OpenAI playground",
-          duration: "4m 37s",
+          title: "Change Management in Digital Age",
+          duration: "45m",
           isCompleted: false
         },
         {
-          title: "Adding capabilities, functions, and files to an assistant",
-          duration: "4m 20s",
+          title: "Business Model Canvas for Digital Age",
+          duration: "55m",
+          isCompleted: false
+        }
+      ]
+    },
+    {
+      title: "Module 3: Driving Operational Excellence Through Technology",
+      items: [
+        {
+          title: "Technology Stack Assessment",
+          duration: "40m",
           isCompleted: false
         },
         {
-          title: "Creating assistants, threads, and runs through the API",
-          duration: "6m 32s",
+          title: "Process Automation and Optimization",
+          duration: "48m",
+          isCompleted: false
+        },
+        {
+          title: "Data-Driven Decision Making",
+          duration: "52m",
+          isCompleted: false
+        }
+      ]
+    },
+    {
+      title: "Module 4: Empowering People and Fostering Innovation",
+      items: [
+        {
+          title: "Building Digital Capabilities",
+          duration: "44m",
+          isCompleted: false
+        },
+        {
+          title: "Creating an Innovation Culture",
+          duration: "47m",
+          isCompleted: false
+        },
+        {
+          title: "Measuring Transformation Success",
+          duration: "40m",
           isCompleted: false
         }
       ]
@@ -158,7 +284,7 @@ export default function CourseDetails() {
               <div className="flex items-center gap-2">
                 <Avatar className="h-12 w-12">
                   <AvatarImage src={courseData.instructor.avatar} />
-                  <AvatarFallback>MR</AvatarFallback>
+                  <AvatarFallback>EB</AvatarFallback>
                 </Avatar>
                 <div>
                   <p className="font-medium">{courseData.instructor.name}</p>
